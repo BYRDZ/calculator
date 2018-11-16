@@ -4,54 +4,52 @@
 		<title>Calculator</title>
 		<link rel="stylesheet" href="stylesheet.css" type="text/css">
 		<script type="text/javascript">
-			
+
+			var sep;
 			var ans =0;
 			var selection =0;
-			
+			var num1;
+			var num2;
+
 			function add(){
-			selection =1;
-			//var num1 = document.getElementById("num1").value;
-			//var num2 = document.getElementById("num2").value;
-			//	ans = parseInt(num1) + parseInt(num2);
+				selection =1;
+				num1 = document.getElementById('num1').value;
+					sep = num1.length;
+				document.getElementById('num1').value = num1 + "+";
 			}
-			
+
 			function sub(){
-			//var num1 = document.getElementById("num1").value;
-			//var num2 = document.getElementById("num2").value;
-		
-			//	ans = parseInt(num1) - parseInt(num2);
-			selection =2;
+				selection =2;
+				num1 = document.getElementById('num1').value;
+					sep = num1.length;
+				document.getElementById('num1').value = num1 + "-";
 			}
 			function mul(){
-		//	var num1 = document.getElementById("num1").value;
-			//var num2 = document.getElementById("num2").value;
-			
-			//	ans = parseInt(num1) * parseInt(num2);
-			selection =3;
+				selection =3;
+				num1 = document.getElementById('num1').value;
+					sep = num1.length;
+				document.getElementById('num1').value = num1 + "x";
 			}
 			function div(){
-			//var num1 = document.getElementById("num1").value;
-			//var num2 = document.getElementById("num2").value;
-			
-			//	ans = parseInt(num1) / parseInt(num2);
-			selection=4;
+				selection=4;
+				num1 = document.getElementById('num1').value;
+					sep = num1.length;
+				document.getElementById('num1').value = num1 + "÷";
 			}
-			
+
 			function equal(){
 				document.getElementById("answer").value = ans;
 			}
-			
+
 			function clean(){
 				document.getElementById("num1").value =null;
 				document.getElementById("num2").value=null;
 				document.getElementById("answer").value =0;
 			}
-			//function sel()
-			
+
 			function cal(){
-			//document.write(selection);
-				var num1 = document.getElementById("num1").value;
-				var num2 = document.getElementById("num2").value;
+				x = document.getElementById("num1").value;
+				num2 = x.slice(sep+1);
 				if (selection == 1){
 				ans = parseInt(num1) + parseInt(num2);
 				}
@@ -62,38 +60,92 @@
 				ans = parseInt(num1) * parseInt(num2);
 				}
 				else if (selection == 4){
+					//.write(num2);
 				ans = parseInt(num1) / parseInt(num2);
 				}
-				document.getElementById("answer").value = ans;
+				document.getElementById("num1").value = document.getElementById("num1").value +"="+ ans;
 			}
+
+			function b1(){
+				x = 1;
+				t = document.getElementById('num1').value;
+				document.getElementById('num1').value = t + x;
+			}
+			function b2(){
+				x = 2;
+				t = document.getElementById('num1').value;
+				document.getElementById('num1').value = t + x;
+			}
+			function b3(){
+				x = 3;
+				t = document.getElementById('num1').value;
+				document.getElementById('num1').value = t + x;
+			}
+			function b4(){
+				x = 4;
+				t = document.getElementById('num1').value;
+				document.getElementById('num1').value = t + x;
+			}
+			function b5(){
+				x = 5;
+				t = document.getElementById('num1').value;
+				document.getElementById('num1').value = t + x;
+			}
+			function b6(){
+				x = 6;
+				t = document.getElementById('num1').value;
+				document.getElementById('num1').value = t + x;
+			}
+			function b7(){
+				x = 7;
+				t = document.getElementById('num1').value;
+				document.getElementById('num1').value = t + x;
+			}
+			function b8(){
+				x = 8;
+				t = document.getElementById('num1').value;
+				document.getElementById('num1').value = t + x;
+			}
+			function b9(){
+				x = 9;
+				t = document.getElementById('num1').value;
+				document.getElementById('num1').value = t + x;
+			}
+
 		</script>
 	</head>
-	
+
 	<body>
-	
-		<!form>
 		<div id= divi>
 			<h4>CALCULATOR</h4>
-			<input class="content" type="number" id="num1">
+			<input class="content" type="text" id="num1" readonly>
 			<br>
 			<br>
+			<button class="pad" id="1" onclick=b1()>1</button>
+			<button class="pad" id="2" onclick=b2()>2</button>
+			<button class="pad" id="3" onclick=b3()>3</button>
+			<button class="content" id="clear" onclick=clean()>Clear</button>
+
+			<br>
+			<br>
+			<button class="pad" id="4" onclick=b4()>4</button>
+			<button class="pad" id="5" onclick=b5()>5</button>
+			<button class="pad" id="6" onclick=b6()>6</button>
 			<button class="content" id="plus" onclick=add()>+</button>
 			<button class="content" id="minus" onclick=sub()>-</button>
-			<button class="content" id="mul" onclick=mul()>*</button>
-			<button class="content" id="div" onclick=div()>/</button>
+
+
 			<br>
 			<br>
-			<input class="content" type="number" id="num2">
+			<button class="pad" id="7" onclick=b7()>7</button>
+			<button class="pad" id="8" onclick=b8()>8</button>
+			<button class="pad" id="9" onclick=b9()>9</button>
+			<button class="content" id="mul" onclick=mul()>x</button>
+			<button class="content" id="div" onclick=div()>÷</button>
 			<br>
 			<br>
-			
-			<button class="content" id="clear" onclick=clean()>Clear</button>
+
 			<button class="content" id="equal" onclick=cal()>=</button>
-			<br>
-			<br>
-			<input class="content" type="number" id="answer" value="0" readonly>
-			<!input type="submit" value="submit">
 			</div>
-		<!/form>
 	</body>
 </html>

@@ -5,13 +5,18 @@ h4{
 	text-align:center;
 }
 
+#num1{
+	height:50px;
+	width: 250px;
+}
+
 #divi{
 	padding:20px;
 	text-align:center;
 	border-radius:20px;
 	margin:auto;
 	background-color:#57d1f9;
-	width:50%;
+	width:50vh;
 }
 .content{
 border-color:black;
@@ -29,3 +34,11 @@ width:25%;
 #minus{background-color:#cf64fc;}
 #mul{background-color:#cf64fc;}
 #div{background-color:#cf64fc;}
+
+.pad{
+	background-color:#cf64fc;
+	border-color: black;
+	border-radius:8px;
+	height: 50px;
+	width: 50px;
+}
